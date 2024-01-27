@@ -7,8 +7,8 @@
 <body>
 	<h1>items list</h1>
 	<ul th:each="item:${list}">
-		<li th:text="${item.name"></li>
-		<li th:text="${item.price"></li>
+		<li th:text="${item.name}"></li>
+		<li th:text="${item.price}"></li>
 	</ul>
 	<form action="/" method="get">
 		<input type="submit" value="home">
