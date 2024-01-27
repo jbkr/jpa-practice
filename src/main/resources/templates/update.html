@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>update</title>
+</head>
+<body>
+	<h1>update item</h1>
+	<form th:action="@{/update/{id}(id=${item.id})}" method="post">
+		<div>
+			<label>id : </label> <input type="text" name="id" th:field="${item.id}" readonly disabled>
+		</div>
+		<div>
+			<label>name : </label> <input type="text" name="name" th:field="${item.name}">
+		</div>
+		<div>
+			<label>price : </label> <input type="text" name="price" th:field="${item.price}">
+		</div>
+		<div>
+			<input type="submit" value="save">
+			<input type="button" value="cancel" onclick="javascript:history.back()">
+		</div>
+	</form>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package jpa.practice.ver1;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,6 +49,25 @@ public class BasicController {
 		Item item = itemService.findById(id).get();
 		model.addAttribute("item", item);
 		return "item";
+	}
+
+	@GetMapping("/update/{id}")
+	public String updateForm(@PathVariable("id") Long id, Model model) {
+		Item item = itemService.findById(id).get();
+		model.addAttribute("item", item);
+		return "update";
+	}
+
+	@PostMapping("/update/{id}")
+	public String update(@ModelAttribute("item") Item item) {
+		itemService.save(item);
+		return "redirect:/list";
+	}
+
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable("id") Long id) {
+		itemService.deleteById(id);
+		return "redirect:/list";
 	}
 
 }

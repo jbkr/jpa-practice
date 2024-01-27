@@ -25,5 +25,8 @@ public class ItemService {
 	public Optional<Item> findById(Long id) {
 		return jpaItemRepository.findById(id);
 	}
-	
+
+	public void deleteById(Long id) {
+		jpaItemRepository.deleteById(id);
+	}
 }
