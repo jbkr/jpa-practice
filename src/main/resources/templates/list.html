@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>list</title>
 </head>
 <body>
 	<h1>items list</h1>
-	<ul>
-		<li></li>
+	<ul th:each="item:${list}">
+		<li th:text="${item.name"></li>
+		<li th:text="${item.price"></li>
 	</ul>
 	<form action="/" method="get">
 		<input type="submit" value="home">
