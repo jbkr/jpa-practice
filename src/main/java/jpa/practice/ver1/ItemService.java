@@ -1,6 +1,7 @@
 package jpa.practice.ver1;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -13,11 +14,16 @@ public class ItemService {
 		this.jpaItemRepository = jpaItemRepository;
 	}
 
-	public Item addItem(Item item) {
+	public Item save(Item item) {
 		return jpaItemRepository.save(item);
 	}
 	
-	public List<Item> list(){
+	public List<Item> findAll(){
 		return jpaItemRepository.findAll();
 	}
+	
+	public Optional<Item> findById(Long id) {
+		return jpaItemRepository.findById(id);
+	}
+	
 }

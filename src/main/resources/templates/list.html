@@ -21,8 +21,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="item:${list}" onclick="window.location='/';">
-				<td th:text="${item.id}"></td>
+			<tr th:each="item:${list}">
+				<td><a th:text="${item.id}" th:href="@{/list/{id}(id=${item.id})}"></a></td>
 				<td th:text="${item.name}"></td>
 				<td th:text="${item.price}"></td>
 			</tr>
