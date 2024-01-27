@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>item</title>
+</head>
+<body>
+	<h1>item description</h1>
+	<form action="/add" method="post">
+		<div>
+			<label>id : </label> <input type="text" name="name" th:field="${item.id}" readonly disabled>
+		</div>
+		<div>
+			<label>name : </label> <input type="text" name="name" th:field="${item.name}" readonly disabled>
+		</div>
+		<div>
+			<label>price : </label> <input type="text" name="price" th:field="${item.price}" readonly disabled>
+		</div>
+		<div>
+			<input type="submit" value="update">
+			<input type="submit" value="delete">
+			<input type="submit" value="list">
+		</div>
+	</form>
+</body>
+</html>
