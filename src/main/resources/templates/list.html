@@ -6,12 +6,27 @@
 </head>
 <body>
 	<h1>items list</h1>
-	<ul th:each="item:${list}">
-		<li th:text="${item.name}"></li>
-		<li th:text="${item.price}"></li>
-	</ul>
 	<form action="/" method="get">
 		<input type="submit" value="home">
 	</form>
+	<form action="/add" method="get">
+		<input type="submit" value="add">
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>name</th>
+				<th>price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="item:${list}" onclick="window.location='/';">
+				<td th:text="${item.id}"></td>
+				<td th:text="${item.name}"></td>
+				<td th:text="${item.price}"></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

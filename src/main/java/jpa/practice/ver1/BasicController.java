@@ -40,7 +40,7 @@ public class BasicController {
 		item.setName(itemDTO.getName());
 		item.setPrice(itemDTO.getPrice());
 		itemService.addItem(item);
-		return "redirect:/";
+		return "redirect:/list";
 	}
 
 }
