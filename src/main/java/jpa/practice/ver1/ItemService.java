@@ -1,5 +1,7 @@
 package jpa.practice.ver1;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +14,10 @@ public class ItemService {
 	}
 
 	public Item addItem(Item item) {
-		return jpaItemRepository.add(item);
+		return jpaItemRepository.save(item);
+	}
+	
+	public List<Item> list(){
+		return jpaItemRepository.findAll();
 	}
 }

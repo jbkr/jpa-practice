@@ -1,14 +1,9 @@
 package jpa.practice.ver1;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class JPAItemRepository implements ItemRepository {
-
-	@Override
-	public Item add(Item item) {
-		
-		return null;
-	}
+@Primary
+public interface JPAItemRepository extends JpaRepository<Item, Long>, ItemRepository {
 
 }
