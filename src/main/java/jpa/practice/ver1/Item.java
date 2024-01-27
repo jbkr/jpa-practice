@@ -12,10 +12,10 @@ public class Item {
 	@Id
 	@Column(name = "item_id")
 	private Long id;
-
+	
 	@Column(name = "item_name")
 	private String name;
-
+	
 	@Column(name = "item_price")
 	private Integer price;
 
